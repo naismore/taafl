@@ -13,9 +13,15 @@ typedef struct
 	char* nextState; // Следующее состояние
 	char* output; // Выходной символ
 	char* input; // Входной символ
-
 } MealyTransition;
 
+typedef struct
+{
+	char* stateName;
+	char* currentState;
+	char* nextState;
+	char* output;
+} MooreState;
 
 void split_string(const char* line, char* tokens[], int* count, char* delim)
 {
@@ -57,15 +63,15 @@ void split_string(const char* line, char* tokens[], int* count, char* delim)
 	}
 }
 
-void readMealyFromFile(const char* filename, MealyTransition transitions[MAX_TRANSITIONS][MAX_STATES], int* countStates)
+void readMealyFromFile(const char* filename, MealyTransition transitions[MAX_TRANSITIONS][MAX_STATES], int* countLines, int* countStates)
 {
 	char* lines[MAX_TRANSITIONS / MAX_STATES];
 	char line[MAX_LINE_LENGTH]; // Буфер для чтения файла
-	int linesCount = 0;
+
 	char* rowTransitions[MAX_TRANSITIONS]; // Массив строк (указателей)
 	int countTransitions = 0; // Количество переходов
 	char* states[MAX_STATES]; // Массив состояний
-	int countStates = 0; // Количество состояний символов
+
 
 	FILE *fp = fopen(filename, "r"); // Открытие файла
 	if (fp == NULL)
@@ -89,11 +95,11 @@ void readMealyFromFile(const char* filename, MealyTransition transitions[MAX_TRA
 
 	while(fgets(line, sizeof(line), fp)) // Считываем все строки переходов и входных символов
 	{
-		lines[linesCount] = strdup(line);
-		linesCount++;
+		lines[*countLines] = strdup(line);
+		countLines++;
 	}
 
-	for (int i = 0; i < linesCount; i++)
+	for (int i = 0; i < countLines; i++)
 	{
 		for(int j = 0; j < countStates; j++)
 		{
@@ -104,7 +110,7 @@ void readMealyFromFile(const char* filename, MealyTransition transitions[MAX_TRA
 
 	int indexTransition = 0;
 
-	for (int i = 0; i < linesCount; i++)
+	for (int i = 0; i < countLines; i++)
 	{
 		indexTransition = 0;
 		char* token = strtok(lines[i], ";"); 
@@ -141,10 +147,9 @@ int main()
 {
 	MealyTransition transitions[MAX_STATES][MAX_INPUTS]; // Массив переходов
 	char* filename = "input0.csv"; // Имя файла
-
-
-	
-	readMealyFromFile(filename, transitions);
+	int countLines = 0;
+	int countStates = 0; // Количество состояний символов
+	readMealyFromFile(filename, transitions, countLines, countStates);
 
 	return 0;
 }
