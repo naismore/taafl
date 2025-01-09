@@ -18,6 +18,7 @@ typedef struct
 typedef struct
 {
 	char* stateName;
+	char* input;
 	char* currentState;
 	char* nextState;
 	char* output;
@@ -27,7 +28,7 @@ void split_string(const char* line, char* tokens[], int* count, char* delim)
 {
 	const char* start = line;
 	const char* end;
-	*count = 0;
+	count = 0;
 
 	while(*start)
 	{
@@ -63,7 +64,7 @@ void split_string(const char* line, char* tokens[], int* count, char* delim)
 	}
 }
 
-void readMealyFromFile(const char* filename, MealyTransition transitions[MAX_TRANSITIONS][MAX_STATES], int* countLines, int* countStates)
+void readMealyFromFile(const char* filename, MealyTransition transitions[MAX_INPUTS][MAX_STATES], int* countLines, int* countStates)
 {
 	char* lines[MAX_TRANSITIONS / MAX_STATES];
 	char line[MAX_LINE_LENGTH]; // Буфер для чтения файла
@@ -83,9 +84,9 @@ void readMealyFromFile(const char* filename, MealyTransition transitions[MAX_TRA
 	if(fgets(line, sizeof(line), fp)) // Считываем состояния
 	{
 		char* lineCopy = strdup(line);
-		printf("%s\n", line);
-		split_string(lineCopy, states, &countStates, ";");
-		printf("exit\n");
+		//printf("%s\n", line);
+		split_string(lineCopy, states, countStates, ";");
+		//printf("exit\n");
 		free(lineCopy);
 		for(int i = 0; i < countStates; i++)
 		{
@@ -143,13 +144,67 @@ void readMealyFromFile(const char* filename, MealyTransition transitions[MAX_TRA
 
 }
 
+int existMooreState(MooreState mooreStates[MAX_INPUTS][MAX_STATES], const int* countRows, const int* countColumns, const char* nextState, const char* output)
+{
+	for (int i = 0; i < countRows; i++)
+	{
+		for (int j = 0; j < countColumns; j++)
+		{
+			if (mooreStates[i][j].output == output && mooreStates[i][j].nextState == nextState)
+			{
+				return 1;
+			}
+		}
+	}
+	return 0;
+}
+
 int main()
 {
-	MealyTransition transitions[MAX_STATES][MAX_INPUTS]; // Массив переходов
+	MealyTransition transitions[MAX_INPUTS][MAX_STATES]; // Массив переходов
+	MooreState mooreStates[MAX_INPUTS][MAX_STATES];
 	char* filename = "input0.csv"; // Имя файла
 	int countLines = 0;
 	int countStates = 0; // Количество состояний символов
-	readMealyFromFile(filename, transitions, countLines, countStates);
+	int mooreColumnsCount = 0;
+	int mooreRowsCount = 0;
+
+	printf("FIRST FIRST STEP");
+
+	readMealyFromFile(filename, transitions, &countLines, &countStates);
+
+	printf("FIRST STEP");
+
+	for (int i = 0; i < countLines; i++)
+	{
+		for(int j = 0; j < countStates;)
+		{
+			if (!existMooreState(mooreStates, &mooreRowsCount, &mooreColumnsCount, transitions[i][j].nextState, transitions[i][j].output))
+			{
+				mooreStates[i][j].input = transitions[i][j].input;
+				mooreStates[i][j].output = transitions[i][j].output;
+				mooreStates[i][j].currentState = transitions[i][j].currentState;
+				sprintf(mooreStates[i][j].stateName, "q%d", mooreColumnsCount * mooreRowsCount);
+			}
+			else
+			{
+				continue;
+			}
+			mooreColumnsCount;
+ 		}
+		mooreRowsCount;
+	}
+
+	printf("%d %d", mooreRowsCount, mooreColumnsCount);
+
+	for (int i = 0; i < mooreRowsCount; i++)
+	{
+		for (int j = 0; j < mooreColumnsCount; j++)
+		{
+			printf("MooreState[%d][%d]:\n\tCurrent State: %s\n\tInput: %s\n\tNext State: %s\n\tOutput: %s\n\tName State: %s\n\t", i, j, mooreStates[i][j].currentState, mooreStates[i][j].input, mooreStates[i][j].nextState, mooreStates[i][j].output, mooreStates[i][j].stateName);
+			printf("\n");
+		}	
+	}
 
 	return 0;
 }

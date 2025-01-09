@@ -1,0 +1,17 @@
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\bin\Debug\net8.0\lw1taafl.exe
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\bin\Debug\net8.0\lw1taafl.deps.json
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\bin\Debug\net8.0\lw1taafl.runtimeconfig.json
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\bin\Debug\net8.0\lw1taafl.dll
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\bin\Debug\net8.0\lw1taafl.pdb
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\bin\Debug\net8.0\CsvHelper.dll
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\obj\Debug\net8.0\lw1taafl.csproj.AssemblyReference.cache
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\obj\Debug\net8.0\lw1taafl.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\obj\Debug\net8.0\lw1taafl.AssemblyInfoInputs.cache
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\obj\Debug\net8.0\lw1taafl.AssemblyInfo.cs
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\obj\Debug\net8.0\lw1taafl.csproj.CoreCompileInputs.cache
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\obj\Debug\net8.0\lw1taafl.csproj.Up2Date
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\obj\Debug\net8.0\lw1taafl.dll
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\obj\Debug\net8.0\refint\lw1taafl.dll
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\obj\Debug\net8.0\lw1taafl.pdb
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\obj\Debug\net8.0\lw1taafl.genruntimeconfig.cache
+C:\Users\Mikhail\source\repos\lw1taafl\lw1taafl\obj\Debug\net8.0\ref\lw1taafl.dll
