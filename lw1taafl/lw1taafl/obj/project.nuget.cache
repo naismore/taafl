@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "J1IJ367Gl70=",
+  "dgSpecHash": "giwb2dUgJwc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mikhail\\source\\repos\\lw1taafl\\lw1taafl\\lw1taafl.csproj",
+  "projectFilePath": "C:\\Users\\anxismore\\Documents\\taafl\\lw1taafl\\lw1taafl\\lw1taafl.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Mikhail\\.nuget\\packages\\csvhelper\\33.0.1\\csvhelper.33.0.1.nupkg.sha512"
+    "C:\\Users\\anxismore\\.nuget\\packages\\csvhelper\\33.0.1\\csvhelper.33.0.1.nupkg.sha512"
   ],
   "logs": []
 }

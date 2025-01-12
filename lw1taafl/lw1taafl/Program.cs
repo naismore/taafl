@@ -22,7 +22,33 @@ namespace lw1taafl
     {
         static void Main(string[] args)
         {
-            string path = "input2.csv";
+            if (args.Length != 4)
+            {
+                Console.WriteLine("Usage mealyMoore.exe <mealy-to-moore | moore-to-mealy> <input.csv> <output.csv>");
+                throw new Exception();
+            }
+            string command = args[1];
+            string path = args[2];
+            string outPath = args[3];
+
+            switch(command)
+            {
+                case "mealy-to-moore":
+                    MealyToMoore(path);
+                    break;
+                case "moore-to-mealy":
+                    MooreToMealy(path);
+                    break;
+                default:
+                    Console.WriteLine("Unknown command");
+                    break;
+            }
+
+           
+        }
+
+        static void MooreToMealy(string path)
+        {
             List<MooreState> mooreStates = ReadMooreCsv(path);
             List<MealyState> mealyStates = new();
             List<string> inputSignals = new();
@@ -75,11 +101,10 @@ namespace lw1taafl
             }
         }
 
-        static void MealyToMoore()
+        static void MealyToMoore(string path)
         {
             List<MooreState> mooreStates = new();
             List<string> inputSignals = new();
-            string path = "input1.csv";
             List<MealyState> mealyStates = ReadMealy(path);
             var transitions = ReadMealy(path);
             foreach (var transition in transitions)

@@ -53,23 +53,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mikhail\\.nuget\\packages\\": {},
+    "C:\\Users\\anxismore\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mikhail\\source\\repos\\lw1taafl\\lw1taafl\\lw1taafl.csproj",
+      "projectUniqueName": "C:\\Users\\anxismore\\Documents\\taafl\\lw1taafl\\lw1taafl\\lw1taafl.csproj",
       "projectName": "lw1taafl",
-      "projectPath": "C:\\Users\\Mikhail\\source\\repos\\lw1taafl\\lw1taafl\\lw1taafl.csproj",
-      "packagesPath": "C:\\Users\\Mikhail\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mikhail\\source\\repos\\lw1taafl\\lw1taafl\\obj\\",
+      "projectPath": "C:\\Users\\anxismore\\Documents\\taafl\\lw1taafl\\lw1taafl\\lw1taafl.csproj",
+      "packagesPath": "C:\\Users\\anxismore\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\anxismore\\Documents\\taafl\\lw1taafl\\lw1taafl\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Mikhail\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\anxismore\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -96,7 +96,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -123,7 +124,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
